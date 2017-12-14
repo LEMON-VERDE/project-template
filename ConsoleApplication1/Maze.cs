@@ -8,6 +8,22 @@ namespace ConsoleApplication1
 {
     class Maze
     {
+        public class Coordinates
+        {
+            public uint x;
+            public uint y;
+
+            public Coordinates(uint x, uint y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
+        public const int BLOCKED = -1;
+        public const int NOMINAL = 1;
+        public const int FREE = 0;
+
         int[][] grid;
 
         Coordinates startPosition;
@@ -23,23 +39,17 @@ namespace ConsoleApplication1
         }
         public int valueAt(Coordinates position)
         {
-            int value;
-
-            value = valueAt(position.x, position.y);
-
-            return value;
+            return valueAt(position.x, position.y);
         }
 
-        public class Coordinates
+        public bool isTraversible(uint x, uint y)
         {
-            public uint x;
-            public uint y;
+            return grid[x][y] >= 0;
+        }
 
-            public Coordinates(uint x, uint y)
-            {
-                this.x = x;
-                this.y = y;
-            }
+        public bool isTraversible(Coordinates position)
+        {
+            return grid[position.x][position.y] < 0;
         }
     }
 }
