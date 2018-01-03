@@ -11,8 +11,10 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            int pointeur=0;
             while(true)
             {
+                pointeur += pointeur;
                 Console.ReadKey();
             }
         }
