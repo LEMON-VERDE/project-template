@@ -11,10 +11,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            while(true)
-            {
-                Console.ReadKey();
-            }
+            Console.ReadKey();
         }
     }
 }
