@@ -49,7 +49,7 @@ namespace ConsoleApplication1
 
         public bool isTraversible(Coordinates position)
         {
-            return isTraversible(position.x, position.y);
+            return grid[position.x][position.y] < 0;
         }
     }
 }
